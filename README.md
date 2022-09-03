@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+### Simple Hotel Check App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Simple Hotel Check](https://simple-hotel-check-bgrop1v44-koope79.vercel.app).
 
-## Available Scripts
+## Описание интерфейса
 
-In the project directory, you can run:
+1. Страница авторизации. Почта и пароль могут быть любыми, но должны проходить стандартную валидацию.
+2. Страница отображения отелей, где можно ввести название города, дату заселения и количество дней. По результатам этих данных отображаются отели и информация о них, которые можно добавить в избранное. Избранные отели, в соответствующем блоке, можно отсортировать по стоимости и количеству звезд. На странице отображается карусель захардкоженных изображений. Изображение в карусели можно прокручивать.
 
-### `npm start`
+## Описание логики работы экранов
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Если пароль и логин не прошли валидацию, отображать предупреждение о не правильности введенных данных. Правила валидации: 1. Логин - любая почта; 2. Пароль - без кириллицы, минимум 8 символов.
+- По клику на кнопку вход и наличии валидных данных происходит перенаправление на страницу отелей
+- На странице отелей по дефолту стоит город - Москва, день заезда - текущий (сегодняшний), количество дней - 1
+- Дата пикер может быть дефолтным Тестовое задание для Junior Frontent Developer
+- Поиск отелей осуществляется при нажатии на кнопку найти, но при первой загрузке страницы с дефолтными данными, соответствующие отели должны быть
+- На странице отелей, добавить в избранное можно по нажатию на сердечко, удалить так же. В блоке избранных отелей также можно выполнить удаление из избранных
+- При выборе новых данных для поиска, список избранных не должен сбрасываться. При перезагрузке страницы - может
+- При перезагрузке страницы с отелями авторизация не должна сбрасываться
+- По клику на кнопку “Выход” авторизация сбрасывается и происходит переход на страницу авторизации
