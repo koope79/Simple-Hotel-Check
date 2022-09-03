@@ -7,8 +7,8 @@ export const minLength = (min) => {
     return function (value) {
         const req = requiredField(value);
         if (req) return req;
+        else if(value && !/^[a-zA-Z\s]+$/iu.test(value)) return 'Только латинский';
         else if (value && value.length < min) return `Минимум ${min} символов`;
-        else if(value && value.length < value && !/^[a-zA-Z\s]+$/iu.test(value)) return 'Только латинский';
         return undefined;
     }
 }
