@@ -1,0 +1,102 @@
+.hotel{
+    border-bottom: 1px solid hsla(0,0%,53%,.2);
+    display: flex;
+    margin-bottom: .75rem;
+    padding-bottom: .75rem;
+    width: 100%;
+}
+
+.hotel:first-child {
+    padding-top: 0;
+}
+
+.hotel:last-child {
+    border-bottom: none;
+}
+
+.hotelIcon{
+    min-width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-right: 24px;
+    background: rgba(65, 82, 46, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blockInfo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.blockInfo__name{
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 22px;
+    color: #424242;
+}
+
+.blockInfo__nameLike{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.blockInfo__dates{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #878787;
+}
+
+.blockInfo__starsPrice{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.blockInfo__stars{
+    padding-top: 5px;
+}
+
+.blockInfo__priceText{
+    margin-right: 8px;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 22px;
+}
+
+.blockInfo__price{
+    color: #424242;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+.separator {
+    margin: 0 15px;
+    position: relative;
+}
+
+.separator span {
+    width: 9px;
+    height: 1px;
+    background-color: #878787;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.checked {
+    fill: #E55858;
+    color: #E55858;
+    opacity: 1;
+  }
+  
+.checkedHover:hover{
+    fill: rgba(235, 235, 235, 1);
+    color:rgba(196, 196, 196, 1)
+} 

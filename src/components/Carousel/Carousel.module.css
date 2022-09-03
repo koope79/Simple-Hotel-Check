@@ -1,0 +1,41 @@
+.gallery{
+    height: 164px;
+    width: 100%;
+    margin-top: 28px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    transition: transform 0.4s ease-out 0.1s;
+}
+
+.image {
+    margin-right: 12px;
+    width: 164px;
+    height: 149px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+.button {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.left {
+    top: 0;
+    left: 0;
+}
+
+.right {
+    top: 0;
+    right: 0;
+}

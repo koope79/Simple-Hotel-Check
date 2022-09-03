@@ -1,0 +1,105 @@
+.content {
+    float: left;
+    width: 100%;
+}
+
+.content .overlay {
+    background: url("../../../public/img/font.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    filter: blur(3px);
+    position: relative;
+    z-index: 0;
+}
+
+.content .opacity{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    z-index: 10;
+    background-color: white;
+    filter: opacity(0.6);
+    
+}
+
+.loginform {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    width: 409px;
+    height: 382px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+.subTitle{
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 7px;
+    color: rgba(66, 66, 66, 1);
+    text-align: left;
+    line-height: 18.75px;
+}
+
+.form_block{
+    margin-bottom: 24px;
+}
+
+.form__toolBar{
+    border: solid 1px rgba(201, 202, 204, 1);
+}
+
+.form__toolBar input {
+    padding: 16px;
+    border: 1px solid rgba(201, 202, 204, 1);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form__button {
+    text-align: center;
+}
+.form__button button {
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    background: linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+.form__button button:hover{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
+
+.form__button button:active{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
+
+.errorField{
+    position: absolute;
+    margin-top: 4px;
+    font-size: 12px;
+}
+.errorFieldColor{
+    color: rgba(235, 23, 23, 1);
+}
+
+.errorFieldInput > input {
+    color: rgba(235, 23, 23, 1);
+}
