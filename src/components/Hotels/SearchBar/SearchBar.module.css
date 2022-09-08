@@ -53,3 +53,16 @@
 .barBlock__button button:active{
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
 }
+
+.errorField{
+    position: absolute;
+    margin-top: 4px;
+    font-size: 12px;
+}
+.errorFieldColor{
+    color: rgba(235, 23, 23, 1);
+}
+
+.errorFieldInput > input {
+    color: rgba(235, 23, 23, 1);
+}

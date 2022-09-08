@@ -2,10 +2,11 @@ import s from "./SearchBar.module.css";
 import React from "react";
 import { Formik, Form, Field } from 'formik';
 import { useDispatch } from "react-redux";
-import { requiredField } from "../../../validators/validators";
+import { requiredCity, requiredCountDays, requiredField } from "../../../validators/validators";
 import { useRef } from "react";
 import { fetchHotels } from "../../../redux/Hotels-reducer";
 import { currentDate } from "../../../utilities/convertDate";
+import classnames from 'classnames';
 
 
 const SearchBar = () => {
@@ -26,8 +27,9 @@ const SearchBar = () => {
                         <div className={s.barBlock}>
                             <div className={s.barBlock_title}>Локация</div>
                             <div className={s.barBlock_input}>
-                                <Field type="text" name="loca" validate={requiredField} placeholder="Москва" />
+                                <Field type="text" name="loca" validate={requiredCity} placeholder="Москва" />
                             </div>
+                            {errors.loca && touched.loca && <div className={classnames(s.errorField, {[s.errorFieldColor]: errors.loca})}>{errors.loca}</div>}
                         </div>
 
                         <div className={s.barBlock}>
@@ -35,13 +37,15 @@ const SearchBar = () => {
                             <div className={s.barBlock_input}>
                                 <Field innerRef={ref} type="text" onFocus={() => (ref.current.type = "date")} name="date" validate={requiredField} placeholder={currentDate()} />
                             </div>
+                            {errors.date && touched.date && <div className={classnames(s.errorField, {[s.errorFieldColor]: errors.date})}>{errors.date}</div>}
                         </div>
 
                         <div className={s.barBlock}>
                             <div className={s.barBlock_title}>Количество дней</div>
                             <div className={s.barBlock_input}>
-                                <Field type="text" name="days" validate={requiredField} placeholder="1" />
+                                <Field type="text" name="days" validate={requiredCountDays} placeholder="1" />
                             </div>
+                            {errors.days && touched.days && <div className={classnames(s.errorField, {[s.errorFieldColor]: errors.days})}>{errors.days}</div>}
                         </div>
 
                         <div className={s.barBlock__button}>

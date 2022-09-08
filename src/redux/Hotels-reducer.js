@@ -17,11 +17,11 @@ let initialState = {
 const hotelsRecuder = (state = initialState, action) => {
     switch (action.type) {
         case SET_DATA_HOTELS:
-            const hotels = action.payload.map(h => ({...h, cityname: action.cityName, dateFrom: action.dateFrom, countDays: action.countDays}))
-           
+            const hotels = action.payload.map(h => ({ ...h, cityname: action.cityName, dateFrom: action.dateFrom, countDays: action.countDays }))
+
             return {
                 ...state,
-                dataHotels: [...hotels],
+                dataHotels: hotels,
                 isFetching: false
             }
         case ADD_FAVORITE_HOTEL:
@@ -40,17 +40,15 @@ const hotelsRecuder = (state = initialState, action) => {
                 favoritesHotels: state.favoritesHotels.filter(h => h.hotelId !== action.hotelID),
             }
         case SORT_BY_RATING:
-            return{
-                ...state,
-                favoritesHotels: [...state.favoritesHotels.sort((a, b) => b.stars - a.stars)]
-            }
+            if(action.switchRating == 1) return { ...state, favoritesHotels: [...state.favoritesHotels.sort((a, b) => b.stars - a.stars)] }
+            else return { ...state, favoritesHotels: [...state.favoritesHotels.sort((a, b) => a.stars - b.stars)] }
+
         case SORT_BY_PRICE:
-            return{
-                ...state,
-                favoritesHotels: [...state.favoritesHotels.sort((a, b) => b.priceFrom - a.priceFrom)]
-            }
+            if(action.switchPrice == 1) return {...state, favoritesHotels: [...state.favoritesHotels.sort((a, b) => b.priceFrom - a.priceFrom)] }
+            else return {...state, favoritesHotels: [...state.favoritesHotels.sort((a, b) => a.priceFrom - b.priceFrom)] }
+
         case IS_FETCHING:
-            return{
+            return {
                 ...state,
                 isFetching: true
             }
@@ -59,14 +57,14 @@ const hotelsRecuder = (state = initialState, action) => {
     }
 }
 
-export const setDataHotels = (payload, cityName, dateFrom, countDays) => ({type: SET_DATA_HOTELS, payload, cityName, dateFrom, countDays});
-export const addFavoriteHotel = (hotelID, fullDate, countDays) => ({type: ADD_FAVORITE_HOTEL, hotelID, fullDate, countDays});
-export const deleteFavoriteHotel = (hotelID) => ({type: DELETE_FAVORITE_HOTEL, hotelID});
-export const sortByRating = () => ({type: SORT_BY_RATING});
-export const sortByPrice = () => ({type: SORT_BY_PRICE});
-export const setIsFetching = () => ({type: IS_FETCHING});
+export const setDataHotels = (payload, cityName, dateFrom, countDays) => ({ type: SET_DATA_HOTELS, payload, cityName, dateFrom, countDays });
+export const addFavoriteHotel = (hotelID, fullDate, countDays) => ({ type: ADD_FAVORITE_HOTEL, hotelID, fullDate, countDays });
+export const deleteFavoriteHotel = (hotelID) => ({ type: DELETE_FAVORITE_HOTEL, hotelID });
+export const sortByRating = (switchRating) => ({ type: SORT_BY_RATING, switchRating });
+export const sortByPrice = (switchPrice) => ({ type: SORT_BY_PRICE, switchPrice });
+export const setIsFetching = () => ({ type: IS_FETCHING });
 
-export const fetchHotels = (cityName, date, days, limit) => ({ type: FETCH_HOTELS, payload: {cityName, date, days, limit}});
+export const fetchHotels = (cityName, date, days, limit) => ({ type: FETCH_HOTELS, payload: { cityName, date, days, limit } });
 
 export default hotelsRecuder;
 

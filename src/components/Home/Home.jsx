@@ -30,8 +30,6 @@ const Home = () => {
                 <div className={s.listHotels}>
                     {isfetch ? <Preloader /> : <ListHotels />}
                 </div>
-                
-                
             </section>
         </main>
     );

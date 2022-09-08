@@ -2,7 +2,7 @@ import s from "./ListHotels.module.css";
 import React from 'react';
 import Carousel from "../../Carousel/Carousel";
 import Hotel from "./Hotel/Hotel";
-import { converDateFormat } from "../../../utilities/convertDate";
+import { converDateFormat, convertWordFormat } from "../../../utilities/convertDate";
 import { useSelector } from "react-redux";
 
 
@@ -13,6 +13,8 @@ const ListHotels = () => {
 
     const date = converDateFormat(dataHotels[0]?.dateFrom);
     const hotels = dataHotels.map((h) => (<Hotel key={h.hotelId} hotelID={h.hotelId} hotelName={h.hotelName} stars={h.stars} price={h.priceFrom} fullDate={date} countDays={h.countDays} inListFlag={true} />));
+
+    const nameHotels = ['отель', 'отеля', 'отелей'];
 
     return (
         <>
@@ -33,7 +35,7 @@ const ListHotels = () => {
             <div className={s.additionInfo}>
 
                 <span>Добавлено в Избранное:
-                    {favoritesHotels.length > 0 ? ` ${favoritesHotels.length} ${favoritesHotels.length > 1 && favoritesHotels.length < 5 ? "отеля" : favoritesHotels.length == 1 ? "отель" : "отелей"}`
+                    {favoritesHotels.length > 0 ? ` ${favoritesHotels.length} ${convertWordFormat(favoritesHotels.length, nameHotels)}`
                         : null
                     }
                 </span>

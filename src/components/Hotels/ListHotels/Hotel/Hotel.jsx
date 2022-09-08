@@ -4,13 +4,16 @@ import { HiOutlineHeart } from "react-icons/hi";
 import { v4 as uuid } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavoriteHotel, deleteFavoriteHotel } from "../../../../redux/Hotels-reducer";
+import { convertWordFormat } from "../../../../utilities/convertDate";
 
 const Hotel = ({ hotelID, hotelName, stars, price, fullDate, countDays, inListFlag }) => {
 
     const dispatch = useDispatch();
     const favoritesHotels = useSelector(state => state.hotels.favoritesHotels);
     const likedHotel = favoritesHotels.filter(h => h.hotelId === hotelID);
-    
+
+    const nameDays = ['день', 'дня', 'дней'];
+
     return (
         <div className={s.hotel}>
 
@@ -39,7 +42,7 @@ const Hotel = ({ hotelID, hotelName, stars, price, fullDate, countDays, inListFl
                 </div>
 
                 <div className={s.blockInfo__dates}>
-                    {fullDate}<span className={s.separator}><span ></span></span>{countDays} {(countDays > 1 && countDays < 5) ? "дня" : countDays === 1 ? "день" : "дней"}
+                    {fullDate}<span className={s.separator}><span ></span></span>{countDays} {convertWordFormat(countDays, nameDays)}
                 </div>
 
                 <div className={s.blockInfo__starsPrice}>
