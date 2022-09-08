@@ -11,7 +11,8 @@ import { useRef } from 'react';
 
 const FavoritesHotels = () => {
     const dispatch = useDispatch();
-
+    const ref_rate = useRef();
+    const ref_price = useRef();
     const [switchFieldRating, setSwitchFieldRating] = useState(false);
     const [switchFieldPrice, setSwitchFieldPrice] = useState(false);
 
@@ -36,8 +37,7 @@ const FavoritesHotels = () => {
             dispatch(sortByPrice(0));
         }
     }
-    const ref_rate = useRef();
-    const ref_price = useRef();
+
     const favoritesHotels = useSelector(state => state.hotels.favoritesHotels);
     const hotels = favoritesHotels.map((h) => (<Hotel key={h.hotelId} hotelID={h.hotelId} hotelName={h.hotelName} stars={h.stars} price={h.priceFrom} fullDate={h.fullDate} countDays={h.countDays} inListFlag={false} />));
 
