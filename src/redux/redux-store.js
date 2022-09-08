@@ -29,5 +29,4 @@ export const store = createStore(pReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(hotelsWatcher);
 export const persistor = persistStore(store);
 
-window.store = store;
 

@@ -35,16 +35,10 @@ const Carousel = () => {
         let xDiff = x2 - x1;
 
         if(xDiff > 0) {
-            
-            setImgPosition(imgPosition + 176);
-            if (imgPosition === 0) {
-                setImgPosition(0)
-            }
+            handleSwitchLeft();
         } 
         else if(xDiff < 0) {
-            console.log('aloo');
-            if(imgPosition != -352)
-            setImgPosition(imgPosition - 176);
+            handleSwitchRight();
         }
 
         x1 = null;
