@@ -4,7 +4,7 @@ import { put, takeLatest } from "redux-saga/effects";
 import { countDateTo, currentDate } from '../utilities/convertDate';
 
 function* fetchHotelsSaga({ payload: { cityName = "Москва", date = currentDate(), days = 1, limit = 15 } }) {
-    yield put(setIsFetching());
+    yield put(setIsFetching(true));
     try {
         const dateTo = countDateTo(date, days);
         
@@ -14,7 +14,7 @@ function* fetchHotelsSaga({ payload: { cityName = "Москва", date = current
             : yield null
     }
     catch (e) {
-        console.log(e);
+        yield put(setIsFetching(false));
     }
 }
 

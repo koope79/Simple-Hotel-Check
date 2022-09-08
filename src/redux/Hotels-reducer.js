@@ -50,7 +50,7 @@ const hotelsRecuder = (state = initialState, action) => {
         case IS_FETCHING:
             return {
                 ...state,
-                isFetching: true
+                isFetching: action.flag
             }
         default:
             return state;
@@ -62,7 +62,7 @@ export const addFavoriteHotel = (hotelID, fullDate, countDays) => ({ type: ADD_F
 export const deleteFavoriteHotel = (hotelID) => ({ type: DELETE_FAVORITE_HOTEL, hotelID });
 export const sortByRating = (switchRating) => ({ type: SORT_BY_RATING, switchRating });
 export const sortByPrice = (switchPrice) => ({ type: SORT_BY_PRICE, switchPrice });
-export const setIsFetching = () => ({ type: IS_FETCHING });
+export const setIsFetching = (flag) => ({ type: IS_FETCHING, flag });
 
 export const fetchHotels = (cityName, date, days, limit) => ({ type: FETCH_HOTELS, payload: { cityName, date, days, limit } });
 
