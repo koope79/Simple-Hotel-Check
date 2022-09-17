@@ -4,8 +4,8 @@ export const currentDate = () => {
 }
 
 export const countDateTo = (date, days) => {
-    const result = new Date(date);
-    result.setDate(result.getDate() + days);
+    let result = new Date(date);
+    result.setDate(result.getDate() + Number(days));
     return result.toISOString().split('T')[0];
 }
 
