@@ -1,3 +1,4 @@
+import React from 'react';
 import s from "./Hotel.module.css";
 import { BsFillStarFill } from "react-icons/bs";
 import { HiOutlineHeart } from "react-icons/hi";
@@ -5,12 +6,17 @@ import { v4 as uuid } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavoriteHotel, deleteFavoriteHotel } from "../../../../redux/Hotels-reducer";
 import { convertWordFormat } from "../../../../utilities/convertDate";
+import { createSelector } from 'reselect'
 
-const Hotel = ({ hotelID, hotelName, stars, price, fullDate, countDays, inListFlag }) => {
 
+
+const Hotel = React.memo( ({ hotelID, hotelName, stars, price, fullDate, countDays, inListFlag }) => {
     const dispatch = useDispatch();
-    const favoritesHotels = useSelector(state => state.hotels.favoritesHotels);
-    const likedHotel = favoritesHotels.filter(h => h.hotelId === hotelID);
+    const hotelsSelector = createSelector(
+        state => state.hotels.favoritesHotels,
+        favoritesHotels => favoritesHotels.filter(h => h.hotelId === hotelID),
+    );
+    const favoritesHotels = useSelector(hotelsSelector);
 
     const nameDays = ['день', 'дня', 'дней'];
 
@@ -22,7 +28,7 @@ const Hotel = ({ hotelID, hotelName, stars, price, fullDate, countDays, inListFl
             <div className={s.blockInfo}>
                 <div className={s.blockInfo__nameLike}>
                     <span className={s.blockInfo__name}>{hotelName}</span>
-                    {likedHotel[0]?.like ? (
+                    {favoritesHotels[0]?.like ? (
                         <HiOutlineHeart
                             onClick={() => dispatch(deleteFavoriteHotel(hotelID))}
                             style={{ cursor: "pointer", opacity: "1", minWidth: "21px" }}
@@ -65,7 +71,7 @@ const Hotel = ({ hotelID, hotelName, stars, price, fullDate, countDays, inListFl
 
         </div>
     );
-}
+});
 
 
 export default Hotel;

@@ -7,7 +7,6 @@ function* fetchHotelsSaga({ payload: { cityName = "Москва", date = current
     yield put(setIsFetching(true));
     try {
         const dateTo = countDateTo(date, days);
-        
         const response = yield axios.get(`https://engine.hotellook.com/api/v2/cache.json?location=${cityName}&currency=rub&checkIn=${date}&checkOut=${dateTo}&limit=${limit}`);
         response.data.length > 0
             ? yield put(setDataHotels(response.data, cityName, date, days))

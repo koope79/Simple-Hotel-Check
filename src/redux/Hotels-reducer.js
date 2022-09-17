@@ -18,7 +18,6 @@ const hotelsRecuder = (state = initialState, action) => {
     switch (action.type) {
         case SET_DATA_HOTELS:
             const hotels = action.payload.map(h => ({ ...h, cityname: action.cityName, dateFrom: action.dateFrom, countDays: action.countDays }))
-
             return {
                 ...state,
                 dataHotels: hotels,

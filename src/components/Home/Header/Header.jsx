@@ -9,7 +9,7 @@ const Header = ({logOut}) => {
                 <span>Simple Hotel Check</span>
             </div>
             <div className={s.header__button} onClick={logOut}>Выйти
-                <div className={s.header__button_icon}><img src="img/exit.png"/></div>
+                <div className={s.header__button_icon}><img src="img/exit.png" alt=""/></div>
                 
             </div>
         </div>
