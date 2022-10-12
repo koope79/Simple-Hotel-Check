@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React, { useState } from "react";
-import { useRef } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import s from "./Carousel.module.css";

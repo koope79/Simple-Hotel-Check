@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Navigate replace to="/login" />} />
         <Route path='/home' element={<RequireAuth><Home /></RequireAuth>} />
         <Route path='/login' element={<Login />} />
-        <Route path='*' element={<div>Error: 404</div>} />
+        <Route path='*' element={<Login />} />
       </Routes>
 
     </div>

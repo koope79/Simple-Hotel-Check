@@ -19,6 +19,7 @@
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.2.1",
     "reselect": "^4.1.6",
+    "swiper": "^8.4.4",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },

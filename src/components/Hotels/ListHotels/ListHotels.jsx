@@ -1,9 +1,9 @@
 import s from "./ListHotels.module.css";
 import React from 'react';
-import Carousel from "../../Carousel/Carousel";
 import Hotel from "./Hotel/Hotel";
 import { converDateFormat, convertWordFormat } from "../../../utilities/convertDate";
 import { useSelector } from "react-redux";
+import { Gallery } from "../../Carousel/Gallery";
 
 const AdditionInfo = () => {
     const favoritesHotels = useSelector(state => state.hotels.favoritesHotels);
@@ -40,7 +40,7 @@ const ListHotels = () => {
                 </div>
             </div>
 
-            <Carousel />
+            <Gallery />
 
             <div className={s.additionInfo}>
                 <AdditionInfo />

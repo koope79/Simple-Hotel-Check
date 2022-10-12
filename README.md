@@ -1,6 +1,6 @@
 ### Simple Hotel Check App
 
-[Simple Hotel Check](https://simple-hotel-check-bgrop1v44-koope79.vercel.app).
+[Simple Hotel Check](https://simple-hotel-check-ashen.vercel.app)
 
 ## Описание интерфейса
 
