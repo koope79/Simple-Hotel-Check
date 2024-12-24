@@ -1,115 +1,115 @@
 .favorites {
-    height: 472px;
-    margin-top: 24px;
-    max-width: 360px;
-    background: #FFFFFF;
-    box-shadow: 0 4px 33px rgba(0, 0, 0, 0.04);
-    border-radius: 16px;
-    padding: 32px;
+  height: 472px;
+  margin-top: 24px;
+  max-width: 360px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 33px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  padding: 32px;
 
 }
 
 .title {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
 }
 
 .favorites>div {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .favorites>div:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .favoritesHotels {
-    overflow-y: auto;
-    max-height: 302px;
-    scrollbar-width: thin;
+  overflow-y: auto;
+  max-height: 302px;
+  scrollbar-width: thin;
 }
 
 
 .selects {
-    display: inline-flex;
-    background: transparent;
-    height: 28px;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 4px;
+  display: inline-flex;
+  background: transparent;
+  height: 28px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 4px;
 }
 
 .selects .option {
-    background: #fff;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-right: 0.5rem;
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 0 10px;
-    transition: all 0.3s ease;
+  background: #fff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 0.5rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: all 0.3s ease;
 }
 
 .selects .option .dot {
-    height: 20px;
-    width: 20px;
-    background: #d9d9d9;
-    border-radius: 50%;
-    position: relative;
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
 }
 
 .selects .option .dot::before {
-    position: absolute;
-    content: "";
-    top: 4px;
-    left: 4px;
-    width: 12px;
-    height: 12px;
-    background: #41522e;
-    border-radius: 50%;
-    opacity: 0;
-    transform: scale(1.5);
-    transition: all 0.3s ease;
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #41522e;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
 }
 
 input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 #option_1:checked:checked~.option_1,
 #option_2:checked:checked~.option_2 {
-    border-color: #41522e;
-    background: transparent;
+  border-color: #41522e;
+  background: transparent;
 }
 
 #option_1:checked:checked~.option_1 .dot,
 #option_2:checked:checked~.option_2 .dot {
-    background: #fff;
+  background: #fff;
 }
 
 #option_1:checked:checked~.option_1 .dot::before,
 #option_2:checked:checked~.option_2 .dot::before {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .selects .option span {
-    font-size: 14px;
-    color: #e5e5e5;
+  font-size: 14px;
+  color: #e5e5e5;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 #option_1:checked:checked~.option_1 span,
 #option_2:checked:checked~.option_2 span {
-    color: #41522e;
+  color: #41522e;
 }

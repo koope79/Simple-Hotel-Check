@@ -1,75 +1,76 @@
-.listHotels{
-    width: 664px;
-    padding: 50px 32px;
-    height: 902px;
-    background: #FFFFFF;
-    box-shadow: 0 4px 33px rgba(0, 0, 0, 0.04);
-    border-radius: 16px;
+.listHotels {
+  width: 664px;
+  padding: 50px 32px;
+  height: 902px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 33px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
 }
 
 .topTitles {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
-.topTitles__titles{
-    display: flex;
-    align-items: center;
+.topTitles__titles {
+  display: flex;
+  align-items: center;
 
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 38px;
-    color: rgba(66, 66, 66, 1);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  color: rgba(66, 66, 66, 1);
 }
 
 .topTitles__text {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 38px;
-    color: #424242;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  color: #424242;
 }
+
 .separator {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
-.topTitles__date{
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-    color: rgba(65, 82, 46, 1);
+.topTitles__date {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: rgba(65, 82, 46, 1);
 }
 
-.additionInfo{
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 22px;
-    color: #424242;
-    margin: 20px 0;
+.additionInfo {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  color: #424242;
+  margin: 20px 0;
 }
 
-.additionInfo__countHotels{
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 22px;
+.additionInfo__countHotels {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
 }
 
-.hotelsBlock{
-    height: 530px;
-    overflow-y: auto;
-    padding-right: 14px;
-    border-bottom: 1px solid rgba(135, 135, 135, 0.2);
-    scrollbar-width: thin;
+.hotelsBlock {
+  height: 530px;
+  overflow-y: auto;
+  padding-right: 14px;
+  border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+  scrollbar-width: thin;
 }
 
 .hotelsBlock::-webkit-scrollbar {
-    background-color: #E7E7E7;
-    width: 2px;
-    border-radius: 2px;
+  background-color: #E7E7E7;
+  width: 2px;
+  border-radius: 2px;
 }
 
 .hotelsBlock::-webkit-scrollbar-thumb {
-    background-color: #41522E;
-    border-radius: 2px;
+  background-color: #41522E;
+  border-radius: 2px;
 }
